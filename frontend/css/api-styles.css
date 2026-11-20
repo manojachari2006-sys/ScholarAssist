@@ -1,0 +1,268 @@
+/* Small additions for API loading, errors, and the unauthenticated development notice. */
+.api-message,
+.development-note {
+    padding: 14px 16px;
+    margin: 14px 0;
+    border-radius: 12px;
+    background: #f3f6fb;
+    color: #42506a;
+}
+
+.api-error {
+    background: #fff0ee;
+    color: #9b2c21;
+}
+
+.development-note {
+    font-size: 0.82rem;
+}
+
+.api-message ul {
+    margin-bottom: 0;
+}
+
+.form-feedback:empty {
+    display: none;
+}
+
+.document-review-time {
+    display: block;
+    margin-top: 5px;
+    color: #68758a;
+}
+
+.review-queue {
+    display: grid;
+    gap: 16px;
+}
+
+.review-preview {
+    margin: 14px 0;
+    padding: 10px;
+    background: #f3f6fb;
+    border-radius: 10px;
+}
+
+.review-file-frame {
+    width: 100%;
+    min-height: 65vh;
+    border: 0;
+    background: white;
+}
+
+.review-file-image {
+    display: block;
+    max-width: 100%;
+    max-height: 70vh;
+    margin: auto;
+}
+
+
+/* Student dashboard summary layout. */
+.dashboard-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.dashboard-overview-grid > .panel {
+    min-width: 0;
+}
+
+.dashboard-record {
+    padding: 12px 0;
+    border-top: 1px solid #edf0f1;
+}
+
+.dashboard-record:first-of-type {
+    border-top: 0;
+}
+
+.dashboard-record-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.dashboard-record p {
+    margin: 7px 0;
+    overflow-wrap: anywhere;
+}
+
+.dashboard-record small,
+.dashboard-deadline span {
+    display: block;
+    margin-top: 5px;
+    color: #68758a;
+}
+
+.dashboard-deadline {
+    display: grid;
+    gap: 5px;
+}
+
+.dashboard-next-steps li {
+    margin: 10px 0;
+}
+
+@media (max-width: 760px) {
+    .dashboard-overview-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Compact application guidance and clearer reviewer fact history. */
+.application-sync-note,
+.reviewer-workflow-note {
+    margin: 0 0 14px;
+    padding: 9px 12px;
+    border-left: 3px solid #9bbcc5;
+    background: #f1f6f7;
+    color: #607783;
+    font-size: .72rem;
+}
+
+.confirmed-facts {
+    display: grid;
+    gap: 8px;
+    margin: 14px 0 18px;
+    padding: 0;
+    list-style: none;
+}
+
+.confirmed-facts li {
+    display: grid;
+    grid-template-columns: minmax(145px, .7fr) minmax(0, 1.3fr);
+    gap: 5px 12px;
+    align-items: start;
+    padding: 10px 12px;
+    border: 1px solid #e5ebee;
+    border-radius: 8px;
+    background: #f8fafb;
+    color: #526879;
+    font-size: .74rem;
+    overflow-wrap: anywhere;
+}
+
+.confirmed-facts li b {
+    color: #27485a;
+}
+
+.verified-fact-form {
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr) auto;
+    align-items: end;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e8edef;
+}
+
+.verified-fact-form .form-group {
+    margin: 0;
+}
+
+.fact-feedback {
+    margin-top: 10px;
+}
+
+@media (max-width: 680px) {
+    .confirmed-facts li,
+    .verified-fact-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.portal .panel h2 {
+    font-size: 1.12rem;
+    line-height: 1.3;
+    letter-spacing: -.025em;
+    margin-bottom: 12px;
+}
+
+.confirmed-facts li {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.fact-history-field {
+    display: grid;
+    gap: 3px;
+    min-width: 0;
+}
+
+.fact-history-field small {
+    color: #84929a;
+    font-size: .61rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.fact-history-field strong {
+    color: #27485a;
+    font-size: .74rem;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.deadline-calendar-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.deadline-calendar-toolbar h2 {
+    min-width: 190px;
+    text-align: center;
+    margin: 0;
+}
+
+.deadline-calendar-toolbar [data-calendar-today] { margin-left: 8px; }
+.deadline-calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 5px; }
+.deadline-calendar-weekday { padding: 7px 3px; text-align: center; color: #71818a; font-size: .68rem; font-weight: 700; }
+.deadline-calendar-cell { min-height: 72px; position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 5px; padding: 9px; border: 1px solid #e6ecee; border-radius: 8px; background: #fff; color: var(--ink); font: inherit; text-align: left; }
+button.deadline-calendar-cell { cursor: pointer; }
+button.deadline-calendar-cell:hover, .deadline-calendar-cell.selected { border-color: var(--blue); background: #f0f7f8; }
+.deadline-calendar-cell.today > span { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--blue); color: #fff; font-size: .73rem; font-weight: 700; }
+.deadline-calendar-cell i { width: 7px; height: 7px; border-radius: 50%; background: #d48a20; }
+.deadline-calendar-cell small { color: #8a5a12; font-size: .61rem; }
+.deadline-calendar-cell.outside { min-height: 1px; background: #f7f9fa; border-color: transparent; }
+.deadline-event-list { display: grid; gap: 8px; }
+.deadline-event { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 12px 14px; border: 1px solid #e6ecee; border-radius: 9px; }
+.deadline-event>div { display: grid; gap: 3px; min-width: 0; }
+.deadline-event time { color: var(--blue); font-size: .68rem; font-weight: 700; }
+.deadline-event strong { font-size: .8rem; }
+.deadline-event p { margin: 0; font-size: .68rem; }
+.deadline-event .text-link { flex: none; }
+
+.email-preference-panel > p { font-size: .76rem; margin: 0 0 14px; max-width: 760px; }
+.email-preference-control { display: flex; align-items: flex-start; gap: 10px; color: #354c5a; font-size: .76rem; font-weight: 600; }
+.email-preference-control input { width: 17px; height: 17px; margin: 1px 0 0; accent-color: var(--blue); flex: none; }
+.email-status-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; color: #617782; font-size: .7rem; }
+.email-status-row strong { color: #304b58; }
+.email-status-row strong.configured { color: #287351; }
+.email-status-row strong.unavailable { color: #8a5a12; }
+.email-preference-panel .form-hint { margin-top: 8px; }
+.email-preference-panel .form-feedback { margin-top: 8px; font-size: .73rem; }
+
+@media (max-width: 680px) {
+    .deadline-calendar-grid { gap: 3px; }
+    .deadline-calendar-cell { min-height: 54px; padding: 6px 4px; align-items: center; }
+    .deadline-calendar-cell small { font-size: .52rem; }
+    .deadline-calendar-toolbar { gap: 6px; flex-wrap: wrap; }
+    .deadline-calendar-toolbar h2 { min-width: 145px; font-size: 1rem; }
+    .deadline-calendar-toolbar [data-calendar-today] { margin-left: 0; }
+    .deadline-event { align-items: flex-start; }
+}
+
+@media (max-width: 680px) {
+    .confirmed-facts li {
+        grid-template-columns: 1fr;
+    }
+}

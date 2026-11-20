@@ -1,0 +1,14 @@
+/*
+  pages.css
+  Page-specific adjustments for student workspace and account forms.
+  This file only styles the frontend; backend values will use these same visual components.
+*/
+.portal .page-heading h1{color:#172c3c}
+.auth-page .form-group{width:100%}
+.auth-page input[type="checkbox"]{accent-color:#246b83}
+.scholarship-card[hidden],.notification-card[hidden]{display:none}
+.ssp-program-list{list-style:none;padding:0;margin:12px 0 0;border-top:1px solid var(--line)}
+.ssp-program-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 0;border-bottom:1px solid var(--line)}
+.ssp-program-row>span{display:grid;gap:3px}
+.ssp-program-row small{font-size:.68rem;color:var(--muted)}
+@media(max-width:680px){.ssp-program-row{align-items:flex-start;flex-direction:column;gap:6px}}
